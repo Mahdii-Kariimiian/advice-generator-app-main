@@ -10,19 +10,16 @@ async function getAdvice (advice) {
 }
 
 function useAdvice (data) {
-    console.log(data)
     const slipData = data["slip"]
-    console.log(slipData["id"])
-    console.log(slipData["advice"])
     adId.innerText = slipData["id"]
     adviceContent.innerText = '"' + slipData["advice"] + '"'
 }
 
+getAdvice(url)
 
 svgSec.addEventListener('click' , ()=> {
-    getAdvice(url)
     const rand = Math.floor(Math.random() * 150)
     url = `https://api.adviceslip.com/advice/${rand}`
-    console.log(url)
+    getAdvice(url)
 })
 
