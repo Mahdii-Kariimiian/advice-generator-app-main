@@ -33,13 +33,15 @@ I used "https://api.adviceslip.com/" API to get new advice.
 
 ### What I used
 
-````HTML
+Here is a glimps of what I used to built this mini project.
+````
+HTML
 <picture>
       <source srcset="/images/pattern-divider-desktop.svg" media="(min-width:500px)">
       <img src="/images/pattern-divider-mobile.svg" alt="divider">
 </picture>
 
-````CSS
+CSS
 .pop-up {
     animation: pop-up .5s 1;
 }
@@ -48,15 +50,16 @@ I used "https://api.adviceslip.com/" API to get new advice.
     0% { transform: scale(0); }
   100% { transform: scale(1); }
 }
-````JavaScript
+
+JavaScript
 async function getAdvice (advice) {
     const response = await fetch(advice)
     const data = await response.json()
     useAdvice(data)
 }
 
+````
 ## Author
-
 Mahdi Karimian
 - linkedin (www.linkedin.com/in/mahdi-karimian-116643273
 - Frontend Mentor – @Mahdii-Kariimiian (https://www.frontendmentor.io/profile/Mahdii-Kariimiian)
