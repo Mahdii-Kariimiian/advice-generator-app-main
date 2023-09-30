@@ -1,9 +1,16 @@
+/* Reset */
+
 * {
     box-sizing: border-box;
     margin:0;
     padding:0;
 }
 
+svg {
+    max-width: 100%;
+}
+
+/* Root */
 :root {
 --LightCyan: hsl(193, 38%, 86%);
 --NeonGreen: hsl(150, 100%, 66%);
@@ -12,6 +19,7 @@
 --DarkBlue: hsl(218, 23%, 16%);
 }
 
+/* General styles */
 body {
     max-height: 100vh;
     font-family: 'Manrope', sans-serif;
@@ -20,23 +28,19 @@ body {
     margin: 10rem .5rem;
 }
 
-svg {
-    max-width: 100%;
-}
-
 .container {
-    
-    max-width: 500px;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    max-width: 500px;
+    text-align: center;
     background-color: var(--DarkGrayishBlue);
     color:var(--LightCyan);
     padding: 2rem;
     margin: 5rem auto;
     border-radius: 10px;
-    text-align: center;
+    
 }
 
 .advice-id {
@@ -47,37 +51,44 @@ svg {
 }
 
 .advice-content {
-    min-height: 200px;
+    min-height: 180px;
+}
+
+picture {
+    margin-bottom: 2rem;
 }
 
 .svg {
-    position:absolute;
-    bottom: -43px;
-    right: 50%;
-    transform: translateX(50%);
+  transform: scale(1.2);
 }
 
 .svg-sec {
-    position:relative;
-}
-
-.background:hover {
-    cursor: pointer;
-    box-shadow: 0 0 15px hsl(150, 100%, 66%) ;
-}
-
-.svg:hover {
-    cursor: pointer;
-}
-
-.background {
-    position: absolute;
-    top: 3px;
+    position:absolute;
+    bottom: 0;
     right: 50%;
-    transform: translateX(50%);
-    width: 55px;
-    height: 55px;
-    background-color: var(--NeonGreen);
-    padding: 15px;
+    transform: translate(50% , 50%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    aspect-ratio: 1;
     border-radius: 50%;
+    background-color: aqua;
+    transition: box-shadow .3s ease;
 }
+
+.svg-sec:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px hsl(150, 100%, 66%) ;
+}
+
+.pop-up {
+    animation: pop-up .5s 1;
+}
+
+@keyframes pop-up {
+    0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+
